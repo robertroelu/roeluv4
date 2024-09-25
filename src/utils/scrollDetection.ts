@@ -24,7 +24,7 @@ export const scrollDetection = () => {
         });
 
         navUnder.forEach((el) => {
-          el.style.color = '#FEFEFE';
+          el.style.backgroundColor = '#FEFEFE';
         });
         navButt.setAttribute('button-mode', 'green');
         navBurger.style.color = '#FEFEFE';
@@ -40,7 +40,7 @@ export const scrollDetection = () => {
         });
 
         navUnder.forEach((el) => {
-          el.style.color = '#0B0B0D';
+          el.style.backgroundColor = '#0B0B0D';
         });
         navButt.removeAttribute('button-mode');
         navBurger.style.color = '#0B0B0D';
