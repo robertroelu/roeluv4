@@ -3,6 +3,8 @@ export const scrollDetection = () => {
   const navLogo = document.querySelector('#navLogo') as HTMLElement;
   const navLink = document.querySelectorAll('#navLink') as NodeListOf<HTMLElement>;
   const navButt = document.querySelector('[data-button="navButt"]') as HTMLElement;
+  const navUnder = document.querySelectorAll('#navUnder') as NodeListOf<HTMLElement>;
+  const navBurger = document.querySelector('#navBurger') as HTMLElement;
 
   const sections = document.querySelectorAll('[scroll-detection]') as NodeListOf<HTMLElement>;
 
@@ -20,7 +22,12 @@ export const scrollDetection = () => {
         navLink.forEach((el) => {
           el.style.color = '#FEFEFE';
         });
+
+        navUnder.forEach((el) => {
+          el.style.color = '#FEFEFE';
+        });
         navButt.setAttribute('button-mode', 'green');
+        navBurger.style.color = '#FEFEFE';
         activeSection = section; // Nastavíme aktuálnu sekciu ako aktívnu
       }
 
@@ -31,7 +38,12 @@ export const scrollDetection = () => {
         navLink.forEach((el) => {
           el.style.color = '#0B0B0D';
         });
+
+        navUnder.forEach((el) => {
+          el.style.color = '#0B0B0D';
+        });
         navButt.removeAttribute('button-mode');
+        navBurger.style.color = '#0B0B0D';
         activeSection = null; // Zresetujeme aktívnu sekciu
       }
     });
