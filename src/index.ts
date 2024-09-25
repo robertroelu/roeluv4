@@ -18,6 +18,11 @@ import { consoleClear } from '$utils/consoleClear';
 // import { actualYear } from '$utils/actualYear';
 import { typer } from '$utils/typer';
 import { scrollDetection } from '$utils/scrollDetection';
+import { headingAnimation } from '$utils/headingAnimation';
+import { elementAnimation } from '$utils/elementAnimation';
+import { fillAnimation } from '$utils/fillAnimation';
+import { grid } from '$utils/grid';
+import { reload } from '$utils/reload';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -29,4 +34,9 @@ window.Webflow.push(() => {
   swipers();
   // typer();
   scrollDetection();
+  headingAnimation();
+  elementAnimation();
+  fillAnimation();
+  grid();
+  reload();
 });
