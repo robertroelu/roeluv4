@@ -1,10 +1,10 @@
 export const scrollDetection = () => {
-  const navEl = document.querySelector('#navbar') as HTMLElement;
-  const navLogo = document.querySelector('#navLogo') as HTMLElement;
-  const navLink = document.querySelectorAll('#navLink') as NodeListOf<HTMLElement>;
+  const navEl = document.querySelector('[data-nav="navbar"]') as HTMLElement;
+  const navLogo = document.querySelector('[data-nav="navLogo"]') as HTMLElement;
+  const navLink = document.querySelectorAll('[data-nav="navLink"]') as NodeListOf<HTMLElement>;
   const navButt = document.querySelector('[data-button="navButt"]') as HTMLElement;
-  const navUnder = document.querySelectorAll('#navUnder') as NodeListOf<HTMLElement>;
-  const navBurger = document.querySelector('#navBurger') as HTMLElement;
+  const navUnder = document.querySelectorAll('[data-nav="navUnder"]') as NodeListOf<HTMLElement>;
+  const navBurger = document.querySelector('[data-nav="navBurger"]') as HTMLElement;
 
   const sections = document.querySelectorAll('[scroll-detection]') as NodeListOf<HTMLElement>;
 
@@ -16,7 +16,6 @@ export const scrollDetection = () => {
 
       // Ak vrch sekcie dosiahne vrch obrazovky (scrollujeme nadol) alebo vstúpime zo spodnej časti obrazovky (scrollujeme hore)
       if (rect.top <= 50 && rect.bottom > 60 && activeSection !== section) {
-        // console.log('Sekcia narazila na vrch obrazovky alebo vstúpila z dola:', section);
         navEl.style.backgroundColor = '#0B0B0D4D';
         navLogo.style.color = '#FEFEFE';
         navLink.forEach((el) => {
