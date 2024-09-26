@@ -53,6 +53,13 @@ export const swipers = () => {
 
       // Amimation for slide
       function animation() {
+        if (swiperNext?.hasAttribute('data-disabled') && swiperPrev?.hasAttribute('data-disabled'))
+          return;
+
+        // Set custom attribute to prevent interaction
+        if (swiperNext) swiperNext.setAttribute('data-disabled', '');
+        if (swiperPrev) swiperPrev.setAttribute('data-disabled', '');
+
         const activeSlides = document.querySelectorAll(
           '.swiper-slide-active, .swiper-slide-next'
         ) as NodeListOf<HTMLElement>;
@@ -69,6 +76,10 @@ export const swipers = () => {
           activeSlidesAnimation.forEach((slide) => {
             slide.style.opacity = '1'; // Fade out
           });
+
+          // Remove custom attribute to allow interaction
+          if (swiperNext) swiperNext.removeAttribute('data-disabled');
+          if (swiperPrev) swiperPrev.removeAttribute('data-disabled');
         }, 400);
       }
 
