@@ -1,5 +1,7 @@
 export const scrollDetection = () => {
   const navEl = document.querySelector('[data-nav="navbar"]') as HTMLElement;
+  if (!navEl) return;
+  const navContainer = document.querySelector('[data-nav="container"]') as HTMLElement;
   const navLogo = document.querySelector('[data-nav="navLogo"]') as HTMLElement;
   const navLink = document.querySelectorAll('[data-nav="navLink"]') as NodeListOf<HTMLElement>;
   const navButt = document.querySelector('[data-button="navButt"]') as HTMLElement;
@@ -11,12 +13,17 @@ export const scrollDetection = () => {
   let activeSection: HTMLElement | null = null; // Premenná na sledovanie aktívnej sekcie
 
   const handleScroll = () => {
+    const windowWidth = window.innerWidth;
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
 
       // Ak vrch sekcie dosiahne vrch obrazovky (scrollujeme nadol) alebo vstúpime zo spodnej časti obrazovky (scrollujeme hore)
       if (rect.top <= 50 && rect.bottom > 60 && activeSection !== section) {
-        navEl.style.backgroundColor = '#0B0B0D4D';
+        if (windowWidth > 991) {
+          navContainer.style.backgroundColor = '#0B0B0D4D';
+        } else {
+          navEl.style.backgroundColor = '#0B0B0D4D';
+        }
         navLogo.style.color = '#FEFEFE';
         navLink.forEach((el) => {
           el.style.color = '#FEFEFE';
@@ -32,7 +39,11 @@ export const scrollDetection = () => {
 
       // Ak opustíš sekciu (buď vrchom alebo spodkom obrazovky)
       if ((rect.top > 70 || rect.bottom <= 50) && activeSection === section) {
-        navEl.style.backgroundColor = '#FFFFFF4D';
+        if (windowWidth > 991) {
+          navContainer.style.backgroundColor = '#FFFFFF4D';
+        } else {
+          navEl.style.backgroundColor = '#FFFFFF4D';
+        }
         navLogo.style.color = '#0B0B0D';
         navLink.forEach((el) => {
           el.style.color = '#0B0B0D';
