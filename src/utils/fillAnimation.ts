@@ -51,15 +51,15 @@ export const fillAnimation = () => {
       scrollTrigger: {
         trigger: el,
         start: 'top 95%',
-        end: 'bottom 20%',
+        end: 'bottom 45%',
         scrub: true,
       },
     });
-    tl.from(el.querySelectorAll('.word'), {
+    tl.from(el.querySelectorAll('.char'), {
       opacity: 0.3,
       duration: 2.5,
       ease: 'power4.out',
-      stagger: { each: 0.3 },
+      stagger: { each: 0.2 },
     });
   });
 };
