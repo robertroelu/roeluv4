@@ -1,6 +1,9 @@
 import Macy from 'macy';
 
 export const grid = () => {
+  const macyEl = document.querySelector('[macyjs]') as HTMLElement;
+  if (!macyEl) return;
+
   //Created element
   // Create the padding element
   const padding: string =
@@ -17,7 +20,6 @@ export const grid = () => {
     }
   }
 
-  const macyEl = document.querySelector('[macyjs]') as HTMLElement;
   var macy = Macy({
     container: macyEl,
     trueOrder: false,
