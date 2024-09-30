@@ -20,17 +20,19 @@ export const grid = () => {
     }
   }
 
-  var macy = Macy({
-    container: macyEl,
-    trueOrder: false,
-    waitForImages: false,
-    margin: {
-      x: 48,
-      y: 96,
-    },
-    columns: 2,
-    breakAt: {
-      991: 1,
-    },
-  });
+  if (window.innerHeight > 991) {
+    var macy = Macy({
+      container: macyEl,
+      trueOrder: false,
+      waitForImages: false,
+      margin: {
+        x: 48,
+        y: 96,
+      },
+      columns: 2,
+      breakAt: {
+        991: 1,
+      },
+    });
+  }
 };
