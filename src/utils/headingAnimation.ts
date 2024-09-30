@@ -32,7 +32,7 @@ export function elementAnimation(element: HTMLElement[]) {
       ease: 'ease',
       stagger: 0.1,
       filter: 'blur(10px)',
-      delay: 0.3,
+      // delay: 0.3,
     });
     createScrollTrigger(el, tl);
   });
