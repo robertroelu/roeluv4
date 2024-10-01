@@ -17,7 +17,7 @@ export function elementAnimation(element: HTMLElement[]) {
   element.forEach((el) => {
     el.style.opacity = '1';
     new SplitType(el, {
-      types: 'lines,words',
+      types: 'words',
       tagName: 'span',
       wordClass: 'header-word',
     });
