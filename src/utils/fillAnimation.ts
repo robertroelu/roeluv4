@@ -43,7 +43,7 @@ export const fillAnimation = () => {
   if (!scrollEl) return;
   scrollEl.forEach((el) => {
     let typeSplit = new SplitType(el, {
-      types: 'chars',
+      types: 'words,chars',
       tagName: 'span',
     });
 
