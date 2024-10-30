@@ -39,4 +39,6 @@ window.Webflow.push(() => {
   fillAnimation();
   grid();
   reload();
+
+  console.log('ide');
 });
