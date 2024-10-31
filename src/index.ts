@@ -23,6 +23,8 @@ import { elementAnimation } from '$utils/elementAnimation';
 import { fillAnimation } from '$utils/fillAnimation';
 import { grid } from '$utils/grid';
 import { reload } from '$utils/reload';
+import { createdBy } from '$utils/createdBy';
+import { mobileNav } from '$utils/mobileNav';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -39,6 +41,6 @@ window.Webflow.push(() => {
   fillAnimation();
   grid();
   reload();
-
-  console.log('ide');
+  createdBy();
+  mobileNav();
 });
