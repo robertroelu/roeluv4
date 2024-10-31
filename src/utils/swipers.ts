@@ -32,10 +32,12 @@ export const swipers = () => {
           320: {
             slidesPerView: 1,
             // slidesPerGroup: 1,
+            allowTouchMove: true,
           },
-          767: {
+          768: {
             slidesPerView: 2,
             // slidesPerGroup: 2,
+            allowTouchMove: false,
           },
         },
         navigation: {
